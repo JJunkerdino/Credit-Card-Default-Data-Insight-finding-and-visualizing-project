@@ -3,3 +3,6 @@ openpyxl
 duckdb
 matplotlib
 seaborn
+scikit-learn
+statsmodels
+ipykernel
