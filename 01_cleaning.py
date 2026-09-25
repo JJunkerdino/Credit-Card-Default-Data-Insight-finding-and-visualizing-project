@@ -15,7 +15,7 @@ con = duckdb.connect(str(DATA_DIR / "default.duckdb"))
 con.register("raw_df", raw)
 con.execute("CREATE OR REPLACE TABLE raw_default AS SELECT * FROM raw_df")
 
-results = run_sql_file(con, ROOT / "sql" / "01_cleaning.sql")
+results = run_sql_file(con, ROOT / "01_cleaning.sql")
 
 assert results["validate_clean"].loc[0, "n_null"] == 0, "Clean table has NULLs - check category values"
 

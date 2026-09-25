@@ -11,7 +11,7 @@ FIG_DIR = ROOT / "outputs" / "figures"
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 con = duckdb.connect(str(ROOT / "data" / "default.duckdb"), read_only=True)
-results = run_sql_file(con, ROOT / "sql" / "02_eda.sql")
+results = run_sql_file(con, ROOT / "02_eda.sql")
 df = con.sql("SELECT * FROM default_clean").df()
 con.close()
 
